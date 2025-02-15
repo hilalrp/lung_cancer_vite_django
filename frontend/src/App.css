@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Warna latar belakang halaman */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Pastikan halaman selalu penuh */
+  min-width: 100vh;
+
+}
+
+/* Header dan Footer di Tengah */
+.header, .footer {
+  background: linear-gradient(90deg, #ff69b4, #800080); /* Pink ke Ungu */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 1900px; /* Batasi lebar maksimum agar tetap rapi */
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%); /* Memastikan selalu di tengah */
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.custom-file-upload:hover {
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+  box-shadow: 0px 4px 10px rgba(255, 117, 140, 0.3);
+}
+
+.custom-file-upload input {
+  display: none; /* Sembunyikan input default */
+}
+
+/* Header di atas */
+.header {
+  top: 0;
+  height: 80px; /* Tinggi header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header h1 {
+  margin-right: 150px; /* Bisa ubah ke 24px, 32px, dll. */
+}
+
+/* Footer di bawah */
+.footer {
+  bottom: 0;
+  height: 60px; /* Tinggi footer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.predict-button {
+  background-color: #007bff; /* Warna biru */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.predict-button:hover {
+  background-color: #0056b3; /* Warna biru lebih gelap */
+  transform: scale(1.05);
+}
+
+/* Navigasi */
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  height: 60px; /* Atur tinggi sesuai keinginan */
+  width: auto; /* Menjaga aspek rasio */
+  margin-right: 25px;
+}
+
+/* Konten utama dengan ruang cukup agar tidak tertutup */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 60px; /* Beri ruang sesuai tinggi header */
+  margin-bottom: 60px; /* Beri ruang sesuai tinggi footer */
+  max-width: 1000px;
+
+}
+
+/* Upload section */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsivitas */
+@media (max-width: 1024px) {
+  .header, .footer {
+    width: 95%; /* Sedikit lebih kecil di layar kecil */
+  }
+
+  .main-content {
+    padding: 120px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header {
+    height: 70px;
+  }
+
+  .footer {
+    height: 50px;
+  }
+}
