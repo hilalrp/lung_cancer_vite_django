@@ -4,6 +4,7 @@ import Usage from "./pages/Usage";
 import LungCancer from "./pages/LungCancer";
 import About from "./pages/About";
 import Prediction from "./pages/Prediction";
+import HistopathologyImage from "./pages/HistopathologyImage";
 import "./App.css"; // Tambahkan ini agar CSS bisa berfungsi
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Link to="/usage"> Cara Penggunaan</Link> |
           <Link to="/prediction"> Prediksi</Link> |
           <Link to="/lung-cancer"> Kanker Paru-Paru</Link> | 
+          <Link to="/histopathology-image"> Citra Histopatologi</Link> |
           <Link to="/about"> Tentang Kami</Link> 
         </nav>
       </div>
@@ -26,6 +28,7 @@ function App() {
           <Route path="/usage" element={<Usage />} />
           <Route path="/prediction" element={<Prediction />} />
           <Route path="/lung-cancer" element={<LungCancer />} />
+          <Route path="/histopathology-image" element={<HistopathologyImage />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>

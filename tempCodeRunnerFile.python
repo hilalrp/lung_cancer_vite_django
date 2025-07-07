@@ -1,0 +1,36 @@
+from rich.tree import Tree
+from rich.console import Console
+import os
+
+def build_tree(directory):
+    tree = Tree(directory)
+    def add_nodes(tree, path):
+        for item in sorted(os.listdir(path)):
+            full_path = os.path.join(path, item)
+            subtree = tree.add(item)
+            if os.path.isdir(full_path):
+                add_nodes(subtree, full_path)
+    add_nodes(tree, directory)
+    return tree
+
+console = Console()
+#console.print(build_tree("D:/Documents/A Skripsi/Skripsi_Cross_Testing/LungHist700_split/dataset701020-fix"))
+
+from rich.tree import Tree
+from rich.console import Console
+import os
+
+def build_tree(directory):
+    tree = Tree(directory)
+    def add_nodes(tree, path):
+        for item in sorted(os.listdir(path)):
+            full_path = os.path.join(path, item)
+            if os.path.isdir(full_path):
+                subtree = tree.add(f"[bold blue]{item}[/]")
+                add_nodes(subtree, full_path)
+    add_nodes(tree, directory)
+    return tree
+
+console = Console()
+console.print(build_tree("D:/Downloads/LC25000"))
+
